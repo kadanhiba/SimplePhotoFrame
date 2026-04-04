@@ -1,3 +1,42 @@
 <resources>
-    <string name="app_name">SimplePhotoFrame</string>
+    <string name="app_name">Simple Photo Frame</string>
+    <string name="back_to_main">Back to Main</string>
+    <string name="select_photo_folders">Select Photo Folders</string>
+    <string name="slideshow_settings">Slideshow Settings</string>
+    <string name="slideshow_duration">Slideshow Duration (seconds)</string>
+    <string name="image_transition">Image Transition</string>
+    <string name="transition_duration">Transition Duration (seconds)</string>
+    <string name="show_clock">Show Clock</string>
+    <string name="date_display">Date Display</string>
+    <string name="prevent_burn_in">Prevent Screen Burn-In (Rotate Clock Position)</string>
+    <string name="clock_location">Clock Location</string>
+    <string name="auto_mute_video">Auto Mute Video</string>
+    <string name="keep_screen_on">Keep Screen On (Always)</string>
+    <string name="use_display_schedule">Use Display Schedule</string>
+    <string name="start_time">Start Time (HH:mm)</string>
+    <string name="end_time">End Time (HH:mm)</string>
+    <string name="slideshow_order">Slideshow Order</string>
+    <string name="developer_mode">Developer Mode</string>
+    <string name="language">Language</string>
+    <string name="start_slideshow">Start Slideshow</string>
+    <string name="about">About</string>
+    <string name="selected_folders">Selected Folders</string>
+
+    <!-- Transition Names -->
+    <string name="transition_none">None</string>
+    <string name="transition_fade">Fade</string>
+    <string name="transition_swap_right">Swap Right</string>
+    <string name="transition_swap_left">Swap Left</string>
+    <string name="transition_slide_up">Slide Up</string>
+    <string name="transition_slide_down">Slide Down</string>
+    <string name="transition_zoom">Zoom</string>
+    <string name="transition_random">Random</string>
+
+    <!-- Order Names -->
+    <string name="order_randomized">Randomized</string>
+    <string name="order_serial">Serial</string>
+
+    <!-- About Content -->
+    <string name="about_title">About Simple Photo Frame</string>
+    <string name="about_message">Simple Photo Frame v1.0\n\nThis app is designed to turn your tablet or phone into a dedicated digital photo frame. It supports looping slideshows of photos and videos from your local folders with customizable transitions, clock overlays, and power management.\n\nDisclaimer:\nThis app is provided \"as-is\" for free. Use of this application is at the user\'s own responsibility. The author holds no commitment to reliability, fitness for a particular purpose, or responsibility for any impact (hardware or software) resulting from its use.\n\nContact: the.hiba.family@gmail.com</string>
 </resources>

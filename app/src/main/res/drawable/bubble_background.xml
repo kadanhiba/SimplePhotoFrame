@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Solid White Background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" />
+        </shape>
+    </item>
+
+    <!-- Soap Bubbles -->
+    <item android:top="20dp" android:left="30dp">
+        <shape android:shape="oval">
+            <size android:width="40dp" android:height="40dp" />
+            <stroke android:width="1dp" android:color="#40AAAAAA" />
+            <gradient android:type="radial" android:gradientRadius="20dp"
+                android:startColor="#10FFFFFF" android:endColor="#2088CCFF" />
+        </shape>
+    </item>
+
+    <item android:top="150dp" android:left="250dp">
+        <shape android:shape="oval">
+            <size android:width="60dp" android:height="60dp" />
+            <stroke android:width="1dp" android:color="#30AAAAAA" />
+            <gradient android:type="radial" android:gradientRadius="30dp"
+                android:startColor="#10FFFFFF" android:endColor="#15FFCCCC" />
+        </shape>
+    </item>
+
+    <item android:top="300dp" android:left="80dp">
+        <shape android:shape="oval">
+            <size android:width="30dp" android:height="30dp" />
+            <stroke android:width="1dp" android:color="#40AAAAAA" />
+            <gradient android:type="radial" android:gradientRadius="15dp"
+                android:startColor="#10FFFFFF" android:endColor="#15CCFFCC" />
+        </shape>
+    </item>
+
+    <item android:top="450dp" android:right="50dp">
+        <shape android:shape="oval">
+            <size android:width="50dp" android:height="50dp" />
+            <stroke android:width="1dp" android:color="#30AAAAAA" />
+            <gradient android:type="radial" android:gradientRadius="25dp"
+                android:startColor="#10FFFFFF" android:endColor="#108888FF" />
+        </shape>
+    </item>
+
+    <item android:bottom="100dp" android:left="200dp">
+        <shape android:shape="oval">
+            <size android:width="70dp" android:height="70dp" />
+            <stroke android:width="1dp" android:color="#20AAAAAA" />
+            <gradient android:type="radial" android:gradientRadius="35dp"
+                android:startColor="#05FFFFFF" android:endColor="#10EEEEEE" />
+        </shape>
+    </item>
+
+    <item android:top="600dp" android:left="40dp">
+        <shape android:shape="oval">
+            <size android:width="45dp" android:height="45dp" />
+            <stroke android:width="1dp" android:color="#35AAAAAA" />
+            <gradient android:type="radial" android:gradientRadius="22.5dp"
+                android:startColor="#10FFFFFF" android:endColor="#15FFEECC" />
+        </shape>
+    </item>
+
+    <item android:bottom="200dp" android:right="120dp">
+        <shape android:shape="oval">
+            <size android:width="55dp" android:height="55dp" />
+            <stroke android:width="1dp" android:color="#30AAAAAA" />
+            <gradient android:type="radial" android:gradientRadius="27.5dp"
+                android:startColor="#10FFFFFF" android:endColor="#10CCFFEE" />
+        </shape>
+    </item>
+</layer-list>

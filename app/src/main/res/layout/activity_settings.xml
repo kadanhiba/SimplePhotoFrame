@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Back to Main" />
+        android:text="@string/back_to_main" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Slideshow Duration (seconds)"
+                android:text="@string/slideshow_duration"
                 android:textSize="16sp" />
 
             <EditText
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Image Transition"
+                android:text="@string/image_transition"
                 android:textSize="16sp" />
 
             <Spinner
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Transition Duration (seconds)"
+                android:text="@string/transition_duration"
                 android:textSize="16sp" />
 
             <EditText
@@ -67,13 +67,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Show Clock" />
+                android:text="@string/show_clock" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Date Display"
+                android:text="@string/date_display"
                 android:textSize="16sp" />
 
             <Spinner
@@ -86,14 +86,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Prevent Screen Burn-In (Rotate Clock Position)" />
+                android:text="@string/prevent_burn_in" />
 
             <TextView
                 android:id="@+id/tvClockLocationLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Clock Location"
+                android:text="@string/clock_location"
                 android:textSize="16sp" />
 
             <Spinner
@@ -106,21 +106,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Auto Mute Video" />
+                android:text="@string/auto_mute_video" />
 
             <CheckBox
                 android:id="@+id/cbKeepScreenOn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Keep Screen On (Always)" />
+                android:text="@string/keep_screen_on" />
 
             <CheckBox
                 android:id="@+id/cbUseSchedule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Use Display Schedule" />
+                android:text="@string/use_display_schedule" />
 
             <LinearLayout
                 android:id="@+id/llSchedule"
@@ -133,7 +133,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Start Time (HH:mm)" />
+                    android:text="@string/start_time" />
                 <EditText
                     android:id="@+id/etStartTime"
                     android:layout_width="match_parent"
@@ -144,7 +144,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="End Time (HH:mm)" />
+                    android:text="@string/end_time" />
                 <EditText
                     android:id="@+id/etEndTime"
                     android:layout_width="match_parent"
@@ -157,7 +157,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Slideshow Order"
+                android:text="@string/slideshow_order"
                 android:textSize="16sp" />
 
             <RadioGroup
@@ -169,21 +169,33 @@
                     android:id="@+id/rbRandom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Randomized" />
+                    android:text="@string/order_randomized" />
 
                 <RadioButton
                     android:id="@+id/rbSerial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Serial" />
+                    android:text="@string/order_serial" />
             </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/language"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/cbDeveloperMode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Developer Mode" />
+                android:text="@string/developer_mode" />
 
         </LinearLayout>
     </ScrollView>

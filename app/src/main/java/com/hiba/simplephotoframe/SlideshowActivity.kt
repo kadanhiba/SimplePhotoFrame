@@ -3,6 +3,7 @@ package com.hiba.simplephotoframe
 import android.annotation.SuppressLint
 import android.graphics.drawable.Drawable
 import android.net.Uri
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -34,6 +35,11 @@ import java.util.*
 import kotlin.math.abs
 
 class SlideshowActivity : AppCompatActivity() {
+
+    override fun attachBaseContext(newBase: Context) {
+        val settings = SettingsManager(newBase).getSettings()
+        super.attachBaseContext(LocaleHelper.setLocale(newBase, settings.language))
+    }
 
     private lateinit var settingsManager: SettingsManager
     private lateinit var settings: SlideshowSettings

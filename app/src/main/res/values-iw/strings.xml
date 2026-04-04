@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">מסגרת תמונות פשוטה</string>
+    <string name="back_to_main">חזרה לתפריט הראשי</string>
+    <string name="select_photo_folders">בחירת תיקיית תמונות</string>
+    <string name="slideshow_settings">הגדרות</string>
+    <string name="slideshow_duration">משך הצגת תמונה (שניות)</string>
+    <string name="image_transition">אפקט החלפת תמונה</string>
+    <string name="transition_duration">משך אפקט (שניות)</string>
+    <string name="show_clock">הצג שעון</string>
+    <string name="date_display">הצגת תאריך</string>
+    <string name="prevent_burn_in">מניעת צריבת מסך (שינוי מיקום שעון)</string>
+    <string name="clock_location">מיקום שעון</string>
+    <string name="auto_mute_video">השתק קול בסרטונים</string>
+    <string name="keep_screen_on">השאר מסך דולק</string>
+    <string name="use_display_schedule">קביעת שעון מסך</string>
+    <string name="start_time">שעת התחלה</string>
+    <string name="end_time">שעת סיום</string>
+    <string name="slideshow_order">סדר הצגת תמונות</string>
+    <string name="developer_mode">מצב פיתוח</string>
+    <string name="language">שפה</string>
+    <string name="start_slideshow">התחלת מצגת</string>
+    <string name="about">אודות</string>
+
+    <string name="transition_none">ללא</string>
+    <string name="transition_fade">דועך</string>
+    <string name="transition_swap_right">חילוף מימין</string>
+    <string name="transition_swap_left">חילוף משמאל</string>
+    <string name="transition_slide_up">חילוף מלמעלה</string>
+    <string name="transition_slide_down">חילוף מלמטה</string>
+    <string name="transition_zoom">זום</string>
+    <string name="transition_random">אקראי</string>
+
+    <string name="order_randomized">אקראי</string>
+    <string name="order_serial">סדרתי</string>
+
+    <string name="about_title">אודות מסגרת תמונות פשוטה</string>
+    <string name="about_message">Simple Photo Frame v1.0\n\nאפליקציה זו נועדה להפוך את הטאבלט או הטלפון שלך למסגרת תמונות דיגיטלית ייעודית. היא תומכת במצגות בלולאה של תמונות וסרטונים מהתיקיות המקומיות שלך עם מעברים הניתנים להתאמה אישית, שכבות שעון וניהול חשמל.\n\nכתב ויתור:\nאפליקציה זו מסופקת \"כפי שהיא\" בחינם. השימוש באפליקציה זו הוא באחריות המשתמש בלבד. המחבר אינו מתחייב לאמינות, התאמה למטרה מסוימת, או אחריות לכל השפעה (חומרה או תוכנה) הנובעת מהשימוש בה.\n\nליצירת קשר: the.hiba.family@gmail.com</string>
+
+    <string name="selected_folders">תיקיות נבחרות</string>
+</resources>

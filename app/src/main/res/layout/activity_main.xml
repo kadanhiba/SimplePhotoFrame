@@ -11,27 +11,27 @@
         android:id="@+id/btnSelectFolders"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Photo Folders"
+        android:text="@string/select_photo_folders"
         android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btnSlideshowSettings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Slideshow Settings"
+        android:text="@string/slideshow_settings"
         android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btnStartSlideshow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start Slideshow"
+        android:text="@string/start_slideshow"
         android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/btnAbout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="About" />
+        android:text="@string/about" />
 
 </LinearLayout>

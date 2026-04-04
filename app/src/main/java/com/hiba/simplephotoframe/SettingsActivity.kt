@@ -1,5 +1,7 @@
 package com.hiba.simplephotoframe
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,9 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var settingsManager: SettingsManager
-    private val transitions = arrayOf("None", "Fade", "Swap Right", "Swap Left", "Slide Up", "Slide Down", "Zoom", "Random")
-    private val dateFormats = arrayOf("None", "DD/MM", "DD/MM/YEAR")
-    private val clockLocations = arrayOf("Top-Right", "Top-Left", "Bottom-Left", "Bottom-Right")
+
+    override fun attachBaseContext(newBase: Context) {
+        val settings = SettingsManager(newBase).getSettings()
+        super.attachBaseContext(LocaleHelper.setLocale(newBase, settings.language))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,25 +41,40 @@ class SettingsActivity : AppCompatActivity() {
         val spinnerDate = findViewById<Spinner>(R.id.spinnerDate)
         val rgOrder = findViewById<RadioGroup>(R.id.rgOrder)
         val cbDeveloperMode = findViewById<CheckBox>(R.id.cbDeveloperMode)
+        val spinnerLanguage = findViewById<Spinner>(R.id.spinnerLanguage)
 
         // Setup Duration
         etDuration.setText(settings.durationSeconds.toString())
 
-        // Setup Spinner
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, transitions)
+        // Setup Spinner Transitions
+        val transitionsNames = arrayOf(
+            getString(R.string.transition_none),
+            getString(R.string.transition_fade),
+            getString(R.string.transition_swap_right),
+            getString(R.string.transition_swap_left),
+            getString(R.string.transition_slide_up),
+            getString(R.string.transition_slide_down),
+            getString(R.string.transition_zoom),
+            getString(R.string.transition_random)
+        )
+        val transitionsInternal = arrayOf("None", "Fade", "Swap Right", "Swap Left", "Slide Up", "Slide Down", "Zoom", "Random")
+        
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, transitionsNames)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerTransition.adapter = adapter
-        val transitionIndex = transitions.indexOf(settings.transition)
+        val transitionIndex = transitionsInternal.indexOf(settings.transition)
         if (transitionIndex >= 0) spinnerTransition.setSelection(transitionIndex)
 
         // Setup Transition Duration
         etTransitionDuration.setText(settings.transitionDurationSeconds.toString())
 
         // Setup Date Spinner
-        val dateAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, dateFormats)
+        val dateFormatsNames = arrayOf(getString(R.string.transition_none), "DD/MM", "DD/MM/YEAR")
+        val dateFormatsInternal = arrayOf("None", "DD/MM", "DD/MM/YEAR")
+        val dateAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, dateFormatsNames)
         dateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerDate.adapter = dateAdapter
-        val dateIndex = dateFormats.indexOf(settings.dateDisplay)
+        val dateIndex = dateFormatsInternal.indexOf(settings.dateDisplay)
         if (dateIndex >= 0) spinnerDate.setSelection(dateIndex)
 
         // Setup Clock
@@ -77,11 +96,21 @@ class SettingsActivity : AppCompatActivity() {
         cbPreventBurnIn.isChecked = settings.preventBurnIn
 
         // Setup Clock Location Spinner
+        val clockLocations = arrayOf("Top-Right", "Top-Left", "Bottom-Left", "Bottom-Right")
         val locationAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, clockLocations)
         locationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerClockLocation.adapter = locationAdapter
         val locationIndex = clockLocations.indexOf(settings.clockLocation)
         if (locationIndex >= 0) spinnerClockLocation.setSelection(locationIndex)
+
+        // Setup Language Spinner
+        val languagesDisplay = arrayOf("System Default", "English", "עברית", "Français")
+        val languagesCodes = arrayOf("System", "en", "iw", "fr")
+        val languageAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, languagesDisplay)
+        languageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerLanguage.adapter = languageAdapter
+        val languageIndex = languagesCodes.indexOf(settings.language)
+        if (languageIndex >= 0) spinnerLanguage.setSelection(languageIndex)
 
         // Conditional visibility for Clock Location
         val updateVisibility = {
@@ -102,16 +131,16 @@ class SettingsActivity : AppCompatActivity() {
         cbDeveloperMode.isChecked = settings.developerMode
 
         // AUTO-SAVE LOGIC
-        val saveAction = {
+        val saveAction = { isLanguageChange: Boolean ->
             val rawDuration = etDuration.text.toString().toIntOrNull() ?: 5
             val duration = rawDuration.coerceIn(1, 3600) // Max 1 hour
             
-            val transition = spinnerTransition.selectedItem.toString()
+            val transition = transitionsInternal[spinnerTransition.selectedItemPosition]
             
             val rawTransDuration = etTransitionDuration.text.toString().toFloatOrNull() ?: 0.5f
             val transitionDuration = rawTransDuration.coerceIn(0f, 10f) // Max 10 seconds
 
-            val dateDisplay = spinnerDate.selectedItem.toString()
+            val dateDisplay = dateFormatsInternal[spinnerDate.selectedItemPosition]
             val showClock = cbShowClock.isChecked
             val autoMuteVideo = cbAutoMuteVideo.isChecked
             val preventBurnIn = cbPreventBurnIn.isChecked
@@ -122,19 +151,27 @@ class SettingsActivity : AppCompatActivity() {
             val endTime = etEndTime.text.toString()
             val order = if (findViewById<RadioButton>(R.id.rbRandom).isChecked) "randomized" else "serial"
             val developerMode = cbDeveloperMode.isChecked
+            val language = languagesCodes[spinnerLanguage.selectedItemPosition]
 
             val newSettings = SlideshowSettings(
                 duration, transition, transitionDuration, showClock, dateDisplay,
-                preventBurnIn, clockLocation, autoMuteVideo, keepScreenOn, useSchedule, startTime, endTime, order, developerMode
+                preventBurnIn, clockLocation, autoMuteVideo, keepScreenOn, useSchedule, startTime, endTime, order, developerMode, language
             )
             settingsManager.saveSettings(newSettings)
+
+            if (isLanguageChange) {
+                // Restart activity to apply language change
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
         }
 
         // Listeners for auto-save
         val textWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            override fun afterTextChanged(s: Editable?) { saveAction() }
+            override fun afterTextChanged(s: Editable?) { saveAction(false) }
         }
 
         etDuration.addTextChangedListener(textWatcher)
@@ -142,11 +179,10 @@ class SettingsActivity : AppCompatActivity() {
         etStartTime.addTextChangedListener(textWatcher)
         etEndTime.addTextChangedListener(textWatcher)
 
-        val checkListener = CompoundButton.OnCheckedChangeListener { _, isChecked ->
-            if (llSchedule.id == (llSchedule.parent as View).id) { /* dummy check */ }
+        val checkListener = CompoundButton.OnCheckedChangeListener { _, _ ->
             llSchedule.visibility = if (cbUseSchedule.isChecked) View.VISIBLE else View.GONE
             updateVisibility()
-            saveAction()
+            saveAction(false)
         }
         cbShowClock.setOnCheckedChangeListener(checkListener)
         cbPreventBurnIn.setOnCheckedChangeListener(checkListener)
@@ -156,14 +192,24 @@ class SettingsActivity : AppCompatActivity() {
         cbDeveloperMode.setOnCheckedChangeListener(checkListener)
 
         val spinnerListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) { saveAction() }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if (parent?.id == R.id.spinnerLanguage) {
+                    val currentLangCode = languagesCodes[position]
+                    if (currentLangCode != settings.language) {
+                        saveAction(true)
+                    }
+                } else {
+                    saveAction(false)
+                }
+            }
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
         spinnerTransition.onItemSelectedListener = spinnerListener
         spinnerDate.onItemSelectedListener = spinnerListener
         spinnerClockLocation.onItemSelectedListener = spinnerListener
+        spinnerLanguage.onItemSelectedListener = spinnerListener
 
-        rgOrder.setOnCheckedChangeListener { _, _ -> saveAction() }
+        rgOrder.setOnCheckedChangeListener { _, _ -> saveAction(false) }
 
         findViewById<Button>(R.id.btnBackSettings).setOnClickListener {
             finish()

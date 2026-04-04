@@ -19,7 +19,8 @@ data class SlideshowSettings(
     var startTime: String = "08:00",
     var endTime: String = "22:00",
     var order: String = "randomized",
-    var developerMode: Boolean = false
+    var developerMode: Boolean = false,
+    var language: String = "System"
 )
 
 class SettingsManager(context: Context) {

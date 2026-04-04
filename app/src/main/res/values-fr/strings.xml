@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Cadre Photo Simple</string>
+    <string name="back_to_main">Retour au menu principal</string>
+    <string name="select_photo_folders">Sélectionner les dossiers de photos</string>
+    <string name="slideshow_settings">Paramètres du diaporama</string>
+    <string name="slideshow_duration">Durée d\'affichage (secondes)</string>
+    <string name="image_transition">Transition d\'image</string>
+    <string name="transition_duration">Durée de la transition (secondes)</string>
+    <string name="show_clock">Afficher l\'horloge</string>
+    <string name="date_display">Affichage de la date</string>
+    <string name="prevent_burn_in">Prévenir le marquage de l\'écran (Rotation de l\'horloge)</string>
+    <string name="clock_location">Emplacement de l\'horloge</string>
+    <string name="auto_mute_video">Couper le son des vidéos</string>
+    <string name="keep_screen_on">Garder l\'écran allumé</string>
+    <string name="use_display_schedule">Utiliser un planning d\'affichage</string>
+    <string name="start_time">Heure de début</string>
+    <string name="end_time">Heure de fin</string>
+    <string name="slideshow_order">Ordre du diaporama</string>
+    <string name="developer_mode">Mode développeur</string>
+    <string name="language">Langue</string>
+    <string name="start_slideshow">Démarrer le diaporama</string>
+    <string name="about">À propos</string>
+
+    <string name="transition_none">Aucun</string>
+    <string name="transition_fade">Fondu</string>
+    <string name="transition_swap_right">Échange à droite</string>
+    <string name="transition_swap_left">Échange à gauche</string>
+    <string name="transition_slide_up">Glisser vers le haut</string>
+    <string name="transition_slide_down">Glisser vers le bas</string>
+    <string name="transition_zoom">Zoom</string>
+    <string name="transition_random">Aléatoire</string>
+
+    <string name="order_randomized">Aléatoire</string>
+    <string name="order_serial">Sériel</string>
+
+    <string name="about_title">À propos de Cadre Photo Simple</string>
+    <string name="about_message">Simple Photo Frame v1.0\n\nCette application est conçue pour transformer votre tablette ou téléphone en un cadre photo numérique dédié. Elle prend en charge les diaporamas en boucle de photos et de vidéos à partir de vos dossiers locaux avec des transitions personnalisables, des superpositions d\'horloge et une gestion de l\'alimentation.\n\nAvis de non-responsabilité :\nCette application est fournie \"telle quelle\" gratuitement. L\'utilisation de cette application est sous la seule responsabilité de l\'utilisateur. L\'auteur ne s\'engage à aucune fiabilité, adéquation à un usage particulier ou responsabilité pour tout impact (matériel ou logiciel) résultant de son utilisation.\n\nContact : the.hiba.family@gmail.com</string>
+
+    <string name="selected_folders">Dossiers sélectionnés</string>
+</resources>
