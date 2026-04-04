@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btnBackSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Back to Main" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slideshow Duration (seconds)"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Image Transition"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerTransition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Transition Duration (seconds)"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etTransitionDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="0.5" />
+
+            <CheckBox
+                android:id="@+id/cbShowClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Show Clock" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Date Display"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cbPreventBurnIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Prevent Screen Burn-In (Rotate Clock Position)" />
+
+            <TextView
+                android:id="@+id/tvClockLocationLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Clock Location"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerClockLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cbAutoMuteVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Auto Mute Video" />
+
+            <CheckBox
+                android:id="@+id/cbKeepScreenOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Keep Screen On (Always)" />
+
+            <CheckBox
+                android:id="@+id/cbUseSchedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Use Display Schedule" />
+
+            <LinearLayout
+                android:id="@+id/llSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="24dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start Time (HH:mm)" />
+                <EditText
+                    android:id="@+id/etStartTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="08:00"
+                    android:inputType="time" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="End Time (HH:mm)" />
+                <EditText
+                    android:id="@+id/etEndTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="22:00"
+                    android:inputType="time" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Slideshow Order"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/rgOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rbRandom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Randomized" />
+
+                <RadioButton
+                    android:id="@+id/rbSerial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Serial" />
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/cbDeveloperMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Developer Mode" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

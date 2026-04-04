@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btnSelectFolders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Photo Folders"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnSlideshowSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Slideshow Settings"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnStartSlideshow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Slideshow"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About" />
+
+</LinearLayout>
