@@ -1,4 +1,4 @@
-package com.example.simplephotoframe
+package com.hiba.simplephotoframe
 
 import android.content.Context
 import android.content.SharedPreferences
