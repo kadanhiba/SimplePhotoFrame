@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, SlideshowActivity::class.java))
         }
 
+        findViewById<Button>(R.id.btnExit).setOnClickListener {
+            finish()
+        }
+
         findViewById<Button>(R.id.btnAbout).setOnClickListener {
             showAboutDialog()
         }

@@ -26,8 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FoldersActivity" android:label="Select Photo Folders" />
-        <activity android:name=".SettingsActivity" android:label="Slideshow Settings" />
+        <activity android:name=".FoldersActivity" android:label="@string/select_photo_folders" />
+        <activity android:name=".SettingsActivity" android:label="@string/slideshow_settings" />
         <activity android:name=".SlideshowActivity" android:theme="@style/Theme.SimplePhotoFrame.FullScreen" />
     </application>
 

@@ -29,6 +29,13 @@
         android:layout_marginBottom="16dp" />
 
     <Button
+        android:id="@+id/btnExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        android:layout_marginBottom="16dp" />
+
+    <Button
         android:id="@+id/btnAbout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
